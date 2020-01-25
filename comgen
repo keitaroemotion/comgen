@@ -7,7 +7,7 @@ if(len(sys.argv) < 2):
     print("\nyou need to input argument\n")
     sys.exit()
 
-current_file=sys.argv[1]
+current_file = sys.argv[1]
 
 def print_script_like_comment():
     print("# ")

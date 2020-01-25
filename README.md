@@ -8,7 +8,20 @@ To be honest there is no installation. The purpose of this script is in order to
 Such that, the conceivable scenario is:
 
 
-1. copy the comgen file somewhere under the .vim directory:
+1. Copy the comgen file somewhere under the .vim directory:
 ```
 $cp comgen ~/.vim/some.vim/scripts
 ```
+
+2. Configure the vimrc file, for example
+
+```
+let script_dir  = "~/.vim/some.vim/scripts/"
+:command! Komment   call Komment()
+function! Komment()
+    let result = system(g:script_dir . "comgen " . expand('%:p'))
+    put =result
+endfunction
+```
+
+Then all you need to do is to call the comgen script, with the absolute path of current buffer as an argument.
