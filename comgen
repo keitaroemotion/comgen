@@ -46,7 +46,7 @@ if(re.search(r"[^.]+\.html$", current_file)):
 #
 # detect bash|sh|ruby|python here
 #
-if(
+elif(
     re.search(r"[^.]+\.(sh|rb|py)",                      current_file) or
     re.search(r"#!/usr/bin/env\s+(sh|bash|ruby|python)", first_line  )
 ):
@@ -55,8 +55,11 @@ if(
 #
 # detect groovy|java|C# here
 #
-if(
-    re.search(r"[^.]+\.(java)",           current_file) or
-    re.search(r"#!/usr/bin/env\s+(java)", first_line  )
+elif(
+    re.search(r"[^.]+\.(groovy|java)",           current_file) or
+    re.search(r"#!/usr/bin/env\s+(groovy|java)", first_line  )
 ):
     print_normal_comment()
+
+else:
+    print("corresponding file for " + current_file + " not found.")
