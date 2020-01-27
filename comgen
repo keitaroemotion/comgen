@@ -22,6 +22,14 @@ def print_html_comment():
     print("  --")
     print("  -->")
 
+def print_java_comment():
+    print("/**")
+    print(" * ")
+    print(" * ")
+    print(" * ")
+    print(" * ")
+    print(" */")
+
 def print_normal_comment():
     print("// ")
     print("// ")
@@ -59,7 +67,8 @@ elif(
     re.search(r"[^.]+\.(groovy|java)",           current_file) or
     re.search(r"#!/usr/bin/env\s+(groovy|java)", first_line  )
 ):
-    print_normal_comment()
+    #print_normal_comment()
+    print_java_comment()
 
 else:
     print("corresponding file for " + current_file + " not found.")
